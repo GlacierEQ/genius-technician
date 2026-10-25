@@ -16,6 +16,7 @@ from .aspen_grove import AspenGroveMemoryEngine, MemoryPointer
 from .memory_mesh import MemoryMeshEngine, MemoryItem, MemoryStrata
 from .entity_braid import EntityBraidEngine, OntologicalEntity, OntologicalEdge
 from .deepsoul import DeepSoulEngine, OperatorCoreValue
+from .dream_distiller import DreamDistiller, HierarchicalNode
 
 logger = logging.getLogger(__name__)
 
@@ -29,6 +30,7 @@ class OntologyStone:
         self.memory_mesh: MemoryMeshEngine = MemoryMeshEngine()
         self.entity_braid: EntityBraidEngine = EntityBraidEngine()
         self.deepsoul: DeepSoulEngine = DeepSoulEngine()
+        self.dream_distiller: DreamDistiller = DreamDistiller()
 
     def audit(self) -> Dict[str, Any]:
         """Audit Ontology Stone status with cryptographic digest and provenance.

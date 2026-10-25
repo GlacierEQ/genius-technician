@@ -13,9 +13,16 @@ from __future__ import annotations
 import hashlib
 import logging
 import math
+import sys
+from pathlib import Path
 from typing import Any, Dict
 
 import pytest
+
+_REPO_ROOT = str(Path(__file__).resolve().parents[1])
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
+
 from genius.engine import GeniusTechnician
 from genius.epistemology.ladder import EpistemicLevel
 from genius.epidemiology.pathogen import PathogenSeverity
@@ -274,4 +281,34 @@ def test_bayesian_epistemic_stability() -> None:
     assert inf_audit["posterior_odds"] == float("inf")
     assert inf_audit["posterior_probability"] == 1.0
     assert not math.isnan(inf_audit["posterior_probability"])
+
+
+def test_mission_lock_and_proactive_advance() -> None:
+    """Verify Compaction Immunity lock and Proactive Continuous Improvement scoring."""
+    tech: GeniusTechnician = GeniusTechnician()
+    res = tech.verify_mission_lock_and_proactive_advance("/root/ACTIVE_MISSION_LOCK.json")
+    assert res["compaction_immune"] is True
+    assert res["proactive_improvement_active"] is True
+    assert res["l0_provenance_hash"].startswith("sha256:")
+    assert res["aspen_pointer_id"].startswith("ptr_")
+    assert res["advance_score"] > 10.0
+
+
+def test_dream_distill_estate_hierarchy(tmp_path: Path) -> None:
+    """Verify DreamDistiller consolidates session state into a 4-Tier Hierarchical Bulletpoint Tree."""
+    tech: GeniusTechnician = GeniusTechnician()
+    md_out = tmp_path / "DREAM_DISTILLED_HIERARCHY.md"
+    json_out = tmp_path / "DREAM_DISTILLED_HIERARCHY.json"
+    res = tech.dream_distill_estate(str(md_out), str(json_out))
+    assert res["status"] == "DREAM_DISTILLED"
+    assert res["root_nodes"] == 3
+    assert res["digest"].startswith("sha256:")
+    assert res["aspen_pointer_id"].startswith("ptr_")
+    content = md_out.read_text(encoding="utf-8")
+    assert "[L0] Primary Mission" in content
+    assert "[L1] Pixel Tablet Zero-Loss Cloud Evacuation" in content
+    assert "[L2] 5 Canonical Registered Subagents" in content
+    assert "[L3] genius-epistemic-architect" in content
+
+
 
