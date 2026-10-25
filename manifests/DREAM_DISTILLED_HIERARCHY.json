@@ -1,0 +1,39 @@
+{
+  "schema": "apex.dream-distilled-hierarchy/v1.0",
+  "updated_at": "2026-10-25T15:00:53.817354+00:00",
+  "digest": "sha256:95d8fa5f54ba89b98b725c4b89c09261320c3625902d98ed6f3e7a7b8361de9b",
+  "mission_lock_ref": "/root/ACTIVE_MISSION_LOCK.json",
+  "root_count": 3,
+  "nodes": [
+    {
+      "tier": "L1",
+      "title": "Pixel Tablet Zero-Loss Cloud Evacuation",
+      "summary": "Complete verified migration to `onedrive:PIXEL_TABLET_PRE_RESET_EVACUATION/` prior to Android Factory Reset.",
+      "pointers": [
+        "@pointer:ACTIVE_MISSION_LOCK",
+        "@pointer:RESTORE_PLAYBOOK"
+      ],
+      "verification_hash": null,
+      "children_count": 2
+    },
+    {
+      "tier": "L1",
+      "title": "Diamond Swarm & 6-Stone Genius Mastery Architecture",
+      "summary": "Decentralized lateral subagents + Spiral Engine verification + 75-95% token compression.",
+      "pointers": [
+        "@pointer:DIAMOND_SWARM_SUBAGENTS",
+        "@pointer:GENIUS_ENGINE"
+      ],
+      "verification_hash": null,
+      "children_count": 1
+    },
+    {
+      "tier": "L1",
+      "title": "Sovereign Estate Repositories & Verification Baseline",
+      "summary": "All 175 Git repositories audited across `/root` & `/data/data/com.termux/files/home`; 86/86 dirty/unpushed repos synchronized to `GlacierEQ/*` (`0 failures`).",
+      "pointers": [],
+      "verification_hash": null,
+      "children_count": 2
+    }
+  ]
+}

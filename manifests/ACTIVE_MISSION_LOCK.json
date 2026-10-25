@@ -1,0 +1,51 @@
+{
+  "mission_id": "PIXEL_TABLET_PRE_RESET_EVACUATION",
+  "created_at": "2026-10-25T04:38:00Z",
+  "operator": "Casey Barton",
+  "device": "Google Pixel Tablet",
+  "ultimate_objective": "COMPLETE ZERO-DATA-LOSS EVACUATION TO ONEDRIVE PRIOR TO HARDWARE FACTORY RESET",
+  "playbook_path": "/sdcard/BACKUP_PRE_RESET_20261023/RESET_AND_RESTORATION_PLAYBOOK.md",
+  "cloud_root": "onedrive:PIXEL_TABLET_PRE_RESET_EVACUATION/",
+  "invariants": [
+    "COMPRESSION IS NOT DELETION: Never allow context window compaction to drop or alter this mission.",
+    "RULE §0: Never delete or reset anything locally without 100% verified cryptographic hash matching on OneDrive.",
+    "ZERO-DATA-LOSS: Every key, credential, photo, doc, evidence file, and config must be secured before reset is permitted."
+  ],
+  "phases": {
+    "PHASE_A_DCIM_PICTURES": {
+      "sources": ["/sdcard/DCIM", "/sdcard/Pictures"],
+      "destination": "onedrive:PIXEL_TABLET_PRE_RESET_EVACUATION/DCIM_AND_PICTURES/",
+      "status": "COMPLETED",
+      "verified_files": 82,
+      "exit_code": 0
+    },
+    "PHASE_B_PRE_RESET_BACKUP": {
+      "source": "/sdcard/BACKUP_PRE_RESET_20261023",
+      "destination": "onedrive:PIXEL_TABLET_PRE_RESET_EVACUATION/BACKUP_PRE_RESET_20261023/",
+      "status": "RUNNING",
+      "active_task": "task-2729"
+    },
+    "PHASE_C_KEY_VAULTS": {
+      "sources": [
+        "/root/.operator_key_vault",
+        "/root/.apex_vault",
+        "/root/.env",
+        "/root/.env.apex",
+        "/root/.dropbox_credentials.json",
+        "/root/artifacts/apex_vault_bundle_ENCRYPTED.bin",
+        "/root/.config/rclone/rclone.conf"
+      ],
+      "destination": "onedrive:PIXEL_TABLET_PRE_RESET_EVACUATION/ROOT_VAULTS/",
+      "status": "PENDING_PHASE_B"
+    },
+    "PHASE_D_DOCUMENTS_VAULT": {
+      "source": "/sdcard/Documents",
+      "destination": "onedrive:PIXEL_TABLET_PRE_RESET_EVACUATION/DOCUMENTS/",
+      "status": "PENDING_PHASE_C"
+    },
+    "PHASE_E_VERIFICATION_AUDIT": {
+      "tool": "rclone check --one-way",
+      "status": "PENDING_ALL_PHASES"
+    }
+  }
+}
