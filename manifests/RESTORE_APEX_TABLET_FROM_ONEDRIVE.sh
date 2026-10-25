@@ -495,13 +495,37 @@ restore_documents_and_legal_evidence() {
     tar -xzf "$sd_misc" -C "${SDCARD_DIR}/" --no-same-owner 2>/dev/null || tar -xzf "$sd_misc" -C "${SDCARD_DIR}/"
     log_ok "Downloads & SDCard user folders restored."
 
+    # 8. Wave F1: Termux Gitignored State (.apex, CASE_PDFS, MISSIONS, CATEGORIES) & Documents Legal Supplement (36 chunks)
+    local wave_f1_dir="${STAGING_DIR}/CHUNKS_WAVE_F1"
+    mkdir -p "$wave_f1_dir"
+    if rclone_pull "${EVAC_ROOT}/CHUNKS_WAVE_F1" "$wave_f1_dir"; then
+        if ls "${wave_f1_dir}/TERMUX_AND_DOCUMENTS_LEGAL_SUPPLEMENT_PRE_RESET.tar.gz.part_"* >/dev/null 2>&1; then
+            log_info "Reassembling & unpacking Wave F1 (TERMUX_AND_DOCUMENTS_LEGAL_SUPPLEMENT_PRE_RESET.tar.gz.part_00..35)..."
+            cat "${wave_f1_dir}/TERMUX_AND_DOCUMENTS_LEGAL_SUPPLEMENT_PRE_RESET.tar.gz.part_"* | tar -xzf - -C "${TERMUX_HOME}/" --no-same-owner 2>/dev/null || true
+            log_ok "Wave F1 Termux & Legal Supplement restored."
+        fi
+    fi
+
+    # 9. Wave F2: Complete Obsidian Vaults (07_DATA_CONFIG/OBSIDIAN & 12_OBSIDIAN_VAULT/OBSIDIAN)
+    local wave_f2_dir="${STAGING_DIR}/CHUNKS_WAVE_F2_OBSIDIAN"
+    mkdir -p "$wave_f2_dir"
+    if rclone_pull "${EVAC_ROOT}/CHUNKS_WAVE_F2_OBSIDIAN" "$wave_f2_dir"; then
+        if ls "${wave_f2_dir}/OBSIDIAN_VAULTS_COMPLETE_PRE_RESET.tar.gz.part_"* >/dev/null 2>&1; then
+            log_info "Reassembling & unpacking Wave F2 Obsidian Vaults -> ${DOCUMENTS_DIR}/01_LEGAL_AND_CASE_EVIDENCE/_ORGANIZED/ ..."
+            cat "${wave_f2_dir}/OBSIDIAN_VAULTS_COMPLETE_PRE_RESET.tar.gz.part_"* | tar -xzf - -C "${DOCUMENTS_DIR}/01_LEGAL_AND_CASE_EVIDENCE/_ORGANIZED/" --no-same-owner 2>/dev/null || true
+            log_ok "Wave F2 Obsidian Vaults restored."
+        fi
+    fi
+
     # Optional: Media & Voice Recordings (--with-media)
     if [[ "$WITH_MEDIA" -eq 1 ]]; then
-        log_info "Restoring DCIM/, Pictures/, and 210 Voice Recordings (--with-media)..."
+        log_info "Restoring DCIM/, Pictures/, 210 Voice Recordings, and iOS Evidence Videos (--with-media)..."
         rclone_pull "${EVAC_ROOT}/DCIM" "${SDCARD_DIR}/DCIM"
         rclone_pull "${EVAC_ROOT}/Pictures" "${SDCARD_DIR}/Pictures"
         rclone_pull "${RECORDINGS_REMOTE}" "${SDCARD_DIR}/Recordings"
-        log_ok "DCIM, Pictures, and 210 Voice Recordings restored."
+        rclone_pull "${EVAC_ROOT}/EVIDENCE_VIDEO_CAMERA_ROLL_IOS" "${DOCUMENTS_DIR}/01_LEGAL_AND_CASE_EVIDENCE/_ORGANIZED/05_EVIDENCE_VIDEO/CAMERA_ROLL_IOS" || true
+        rclone_pull "${EVAC_ROOT}/ARCHIVES_OBSIDIAN_EXPORTS" "${DOCUMENTS_DIR}/01_LEGAL_AND_CASE_EVIDENCE/_ORGANIZED/00_ARCHIVES/OBSIDIAN/organized_vault/UNCATEGORIZED" || true
+        log_ok "DCIM, Pictures, 210 Voice Recordings, and iOS Evidence Videos restored."
     fi
 
     if [[ "$KEEP_STAGING" -eq 0 ]]; then

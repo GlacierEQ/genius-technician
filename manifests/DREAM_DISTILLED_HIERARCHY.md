@@ -1,5 +1,5 @@
 # DREAM-DISTILLED HIERARCHICAL MEMORY MATRIX
-> **Last Dream Consolidation:** `2026-10-25T15:00:53.817354+00:00` | **Policy:** `Compression != Deletion (Hierarchical Bulletpoint Preservation)`
+> **Last Dream Consolidation:** `2026-10-25T16:23:24.669571+00:00` | **Policy:** `Compression != Deletion (Hierarchical Bulletpoint Preservation)`
 
 ## 1. [L0] Sovereign Teleology & Immutable Invariants
 - **[L0] Primary Mission**: `COMPLETE ZERO-DATA-LOSS EVACUATION TO ONEDRIVE PRIOR TO HARDWARE FACTORY RESET`
@@ -18,7 +18,9 @@
     - **[L3] Phase D1 & D2 Career + Active Legal Filings**: `DOCUMENTS_CAREER_AND_PERSONAL_PRE_RESET.tar.gz` (5.2 MB) + `LEGAL_CASES_AND_MOTIONS_CORE_PRE_RESET.tar.gz` (203 MB: `1FDV-23-0001009`, JEFS, motions).
     - **[L3] Phase D3 Evidentiary Audio & Images**: `LEGAL_EVIDENCE_AUDIO_AND_IMAGES_PRE_RESET.tar.gz` (932 MB: `03_EVIDENCE_IMAGES`, `04_EVIDENCE_AUDIO`, batch transcripts).
     - **[L3] Phase D4 System Specs, Connectors & Misc User Folders**: `DOCUMENTS_SYSTEM_ARCHITECTURE_SPECS_PRE_RESET.tar.gz` (2.3 MB) + `DOCUMENTS_CODE_AND_CONNECTORS_SCRIPTS_PRE_RESET.tar.gz` (1.8 MB) + `SDCARD_MISC_USER_FOLDERS_PRE_RESET.tar.gz` (134 MB).
-    - **[L3] Phase D5 & E Fault-Tolerant 45 MB Chunks (`CHUNKS_FINAL_UPLOAD/`)**: `DOWNLOADS_COMPLETE_PRE_RESET.tar.gz.part_00..06` (304 MB) + `ROOT_LEGAL_WARFARE_AND_EVIDENCE_VAULTS_PRE_RESET.tar.gz.part_00..19` (883 MB, SHA-256 `4df5981e9470...`).
+    - **[L3] Phase D5 & E Fault-Tolerant 45 MB Chunks (`CHUNKS_FINAL_UPLOAD/`)**: `DOWNLOADS_COMPLETE_PRE_RESET.tar.gz.part_00..06` (304 MB) + `ROOT_LEGAL_WARFARE_AND_EVIDENCE_VAULTS_PRE_RESET.tar.gz.part_00..19` (883 MB, SHA-256 `4df5981e9470...`) — `27/27` chunks verified `0 differences`.
+    - **[L3] Wave F1 Termux & Documents Legal Supplement (`CHUNKS_WAVE_F1/`)**: `TERMUX_AND_DOCUMENTS_LEGAL_SUPPLEMENT_PRE_RESET.tar.gz.part_00..35` (`1.564 GiB` across `36` chunks: Termux `.apex`, `CASE_PDFS`, `MISSIONS`, `CATEGORIES/01..09`, `24` `1FDV` zip packets, `Notion`, `TeraBox`, `Apple*`, `_ORGANIZED` proofbooks & archives) — `36/36` chunks verified `0 differences`.
+    - **[L3] Wave F2 Obsidian Vaults & iOS Evidence Videos**: `CHUNKS_WAVE_F2_OBSIDIAN/` (`07_DATA_CONFIG/OBSIDIAN` + `12_OBSIDIAN_VAULT/OBSIDIAN`) + `EVIDENCE_VIDEO_CAMERA_ROLL_IOS/` (`1.3 GB`) + `ARCHIVES_OBSIDIAN_EXPORTS/` (`1.6 GB`).
   - **[L2] Automated 1-Command Post-Reset Restoration Suite**: Self-healing bootstrap verified `11/11 PASSED` (`bash -n` = 0).
     - **[L3] Bootstrap Executable**: `/root/RESTORE_APEX_TABLET_FROM_ONEDRIVE.sh` (mirrored to `/sdcard/` and OneDrive root).
     - **[L3] Updated Playbook**: `/root/RESET_AND_RESTORATION_PLAYBOOK.md` & `/sdcard/BACKUP_PRE_RESET_20261023/RESET_AND_RESTORATION_PLAYBOOK.md`.

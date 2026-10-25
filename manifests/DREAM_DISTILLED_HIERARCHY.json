@@ -1,7 +1,7 @@
 {
   "schema": "apex.dream-distilled-hierarchy/v1.0",
-  "updated_at": "2026-10-25T15:00:53.817354+00:00",
-  "digest": "sha256:95d8fa5f54ba89b98b725c4b89c09261320c3625902d98ed6f3e7a7b8361de9b",
+  "updated_at": "2026-10-25T16:23:24.669571+00:00",
+  "digest": "sha256:fec99ddfe5214d3a10069b98834088bf7208f6d71f31337040e950181445464b",
   "mission_lock_ref": "/root/ACTIVE_MISSION_LOCK.json",
   "root_count": 3,
   "nodes": [

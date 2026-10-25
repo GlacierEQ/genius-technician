@@ -380,7 +380,9 @@ class GeniusTechnician:
                         HierarchicalNode("L3", "Phase D1 & D2 Career + Active Legal Filings", "`DOCUMENTS_CAREER_AND_PERSONAL_PRE_RESET.tar.gz` (5.2 MB) + `LEGAL_CASES_AND_MOTIONS_CORE_PRE_RESET.tar.gz` (203 MB: `1FDV-23-0001009`, JEFS, motions)."),
                         HierarchicalNode("L3", "Phase D3 Evidentiary Audio & Images", "`LEGAL_EVIDENCE_AUDIO_AND_IMAGES_PRE_RESET.tar.gz` (932 MB: `03_EVIDENCE_IMAGES`, `04_EVIDENCE_AUDIO`, batch transcripts)."),
                         HierarchicalNode("L3", "Phase D4 System Specs, Connectors & Misc User Folders", "`DOCUMENTS_SYSTEM_ARCHITECTURE_SPECS_PRE_RESET.tar.gz` (2.3 MB) + `DOCUMENTS_CODE_AND_CONNECTORS_SCRIPTS_PRE_RESET.tar.gz` (1.8 MB) + `SDCARD_MISC_USER_FOLDERS_PRE_RESET.tar.gz` (134 MB)."),
-                        HierarchicalNode("L3", "Phase D5 & E Fault-Tolerant 45 MB Chunks (`CHUNKS_FINAL_UPLOAD/`)", "`DOWNLOADS_COMPLETE_PRE_RESET.tar.gz.part_00..06` (304 MB) + `ROOT_LEGAL_WARFARE_AND_EVIDENCE_VAULTS_PRE_RESET.tar.gz.part_00..19` (883 MB, SHA-256 `4df5981e9470...`)."),
+                        HierarchicalNode("L3", "Phase D5 & E Fault-Tolerant 45 MB Chunks (`CHUNKS_FINAL_UPLOAD/`)","`DOWNLOADS_COMPLETE_PRE_RESET.tar.gz.part_00..06` (304 MB) + `ROOT_LEGAL_WARFARE_AND_EVIDENCE_VAULTS_PRE_RESET.tar.gz.part_00..19` (883 MB, SHA-256 `4df5981e9470...`) — `27/27` chunks verified `0 differences`."),
+                        HierarchicalNode("L3", "Wave F1 Termux & Documents Legal Supplement (`CHUNKS_WAVE_F1/`)", "`TERMUX_AND_DOCUMENTS_LEGAL_SUPPLEMENT_PRE_RESET.tar.gz.part_00..35` (`1.564 GiB` across `36` chunks: Termux `.apex`, `CASE_PDFS`, `MISSIONS`, `CATEGORIES/01..09`, `24` `1FDV` zip packets, `Notion`, `TeraBox`, `Apple*`, `_ORGANIZED` proofbooks & archives) — `36/36` chunks verified `0 differences`."),
+                        HierarchicalNode("L3", "Wave F2 Obsidian Vaults & iOS Evidence Videos", "`CHUNKS_WAVE_F2_OBSIDIAN/` (`07_DATA_CONFIG/OBSIDIAN` + `12_OBSIDIAN_VAULT/OBSIDIAN`) + `EVIDENCE_VIDEO_CAMERA_ROLL_IOS/` (`1.3 GB`) + `ARCHIVES_OBSIDIAN_EXPORTS/` (`1.6 GB`)."),
                     ],
                 ),
                 HierarchicalNode(
