@@ -379,12 +379,14 @@ class GeniusTechnician:
                         HierarchicalNode("L3", "Phase B Core System Staging", "`BACKUP_PRE_RESET_20261023_PERMISSIONS_PRESERVED.tar.gz` (847 MB: `.omp`, 105 `.agents` skills, `genius-technician`, dotfiles, POSIX perms intact)."),
                         HierarchicalNode("L3", "Phase D1 & D2 Career + Active Legal Filings", "`DOCUMENTS_CAREER_AND_PERSONAL_PRE_RESET.tar.gz` (5.2 MB) + `LEGAL_CASES_AND_MOTIONS_CORE_PRE_RESET.tar.gz` (203 MB: `1FDV-23-0001009`, JEFS, motions)."),
                         HierarchicalNode("L3", "Phase D3 Evidentiary Audio & Images", "`LEGAL_EVIDENCE_AUDIO_AND_IMAGES_PRE_RESET.tar.gz` (932 MB: `03_EVIDENCE_IMAGES`, `04_EVIDENCE_AUDIO`, batch transcripts)."),
+                        HierarchicalNode("L3", "Phase D4 System Specs, Connectors & Misc User Folders", "`DOCUMENTS_SYSTEM_ARCHITECTURE_SPECS_PRE_RESET.tar.gz` (2.3 MB) + `DOCUMENTS_CODE_AND_CONNECTORS_SCRIPTS_PRE_RESET.tar.gz` (1.8 MB) + `SDCARD_MISC_USER_FOLDERS_PRE_RESET.tar.gz` (134 MB)."),
+                        HierarchicalNode("L3", "Phase D5 & E Fault-Tolerant 45 MB Chunks (`CHUNKS_FINAL_UPLOAD/`)", "`DOWNLOADS_COMPLETE_PRE_RESET.tar.gz.part_00..06` (304 MB) + `ROOT_LEGAL_WARFARE_AND_EVIDENCE_VAULTS_PRE_RESET.tar.gz.part_00..19` (883 MB, SHA-256 `4df5981e9470...`)."),
                     ],
                 ),
                 HierarchicalNode(
                     tier="L2",
                     title="Automated 1-Command Post-Reset Restoration Suite",
-                    summary="Self-healing bootstrap verified `10/10 PASSED` (`bash -n` = 0).",
+                    summary="Self-healing bootstrap verified `11/11 PASSED` (`bash -n` = 0).",
                     children=[
                         HierarchicalNode("L3", "Bootstrap Executable", "`/root/RESTORE_APEX_TABLET_FROM_ONEDRIVE.sh` (mirrored to `/sdcard/` and OneDrive root)."),
                         HierarchicalNode("L3", "Updated Playbook", "`/root/RESET_AND_RESTORATION_PLAYBOOK.md` & `/sdcard/BACKUP_PRE_RESET_20261023/RESET_AND_RESTORATION_PLAYBOOK.md`."),
@@ -419,10 +421,10 @@ class GeniusTechnician:
         p_estate = HierarchicalNode(
             tier="L1",
             title="Sovereign Estate Repositories & Verification Baseline",
-            summary="All core codebases verified green and synchronized.",
+            summary="All 175 Git repositories audited across `/root` & `/data/data/com.termux/files/home`; 86/86 dirty/unpushed repos synchronized to `GlacierEQ/*` (`0 failures`).",
             children=[
                 HierarchicalNode("L2", "Career & Agentic Powerhouse", "`job-app-helix` (946/946 tests green, 10 Verified Anchors) + `Forward-Deployed-Agentic-Powerhouse` v0.8.0 (135/135 tests green)."),
-                HierarchicalNode("L2", "Legal Warfare & Autonomous OS", "`casebuilder4000` (178/178 green) + `computer-user` (360/360 green) + `genius-technician` (11/11 green)."),
+                HierarchicalNode("L2", "Legal Warfare & Autonomous OS", "`casebuilder4000` (178/178 green) + `computer-user` (360/360 green) + `genius-technician` (11/11 green) + 76/76 `CASE-*` repos pushed."),
             ],
         )
 

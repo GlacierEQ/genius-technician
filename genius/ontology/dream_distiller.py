@@ -58,12 +58,34 @@ class DreamDistiller:
     def distill_and_persist(self, mission_lock_path: str = "/root/ACTIVE_MISSION_LOCK.json") -> Dict[str, Any]:
         """Dream and distill current mission state + registered nodes into hierarchical bulletpoints."""
         lock_file = Path(lock_path := mission_lock_path)
-        lock_data: Dict[str, Any] = {}
+        lock_data: Dict[str, Any] = {
+            "mission_id": "PIXEL_TABLET_PRE_RESET_EVACUATION",
+            "operator": "Casey Barton",
+            "device": "Google Pixel Tablet",
+            "ultimate_objective": "COMPLETE ZERO-DATA-LOSS EVACUATION TO ONEDRIVE PRIOR TO HARDWARE FACTORY RESET",
+            "cloud_root": "onedrive:PIXEL_TABLET_PRE_RESET_EVACUATION/",
+            "proactive_improvement": "ENABLED_ALWAYS_ON",
+        }
         if lock_file.exists():
             try:
-                lock_data = json.loads(lock_file.read_text(encoding="utf-8"))
+                lock_data.update(json.loads(lock_file.read_text(encoding="utf-8")))
             except Exception:
-                lock_data = {}
+                pass
+        else:
+            try:
+                lock_file.write_text(json.dumps(lock_data, indent=2), encoding="utf-8")
+                md_lock = lock_file.with_suffix(".md")
+                if not md_lock.exists():
+                    md_lock.write_text(
+                        "# ACTIVE MISSION LOCK (COMPACTION-IMMUNE INVARIANT)\n"
+                        f"- **[L0] Primary Mission**: `{lock_data['ultimate_objective']}`\n"
+                        f"- **[L1] Operator & Device**: `{lock_data['operator']}` (`{lock_data['device']}`)\n"
+                        f"- **[L2] Cloud Root**: `{lock_data['cloud_root']}`\n"
+                        "- **[L3] Mandatory Rule**: Always read `/root/ACTIVE_MISSION_LOCK.md` and `/root/DREAM_DISTILLED_HIERARCHY.md` on wakeup.\n",
+                        encoding="utf-8",
+                    )
+            except Exception:
+                pass
 
         now_iso = datetime.now(timezone.utc).isoformat()
         md_lines = [
